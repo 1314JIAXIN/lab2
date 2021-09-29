@@ -1,0 +1,25 @@
+#include<iostream>
+#include<fstream> 
+using namespace std;
+
+int main(){
+	struct input{
+	    char FileName[500];
+	    int level;
+    };
+
+    //a string that includes all keywords;
+    string test="switch case else if auto break char const continue default do double enum extern float for goto int long register return short signed sizeof	static struct typedef union unsigned void volatile while";
+    //a string array that includes the words about ifelse
+    string IFAndElse[5]={"else if","else ","else{","if(","if "};
+    ifstream inFile,myFile;
+    
+    cout << "please enter the path of the file: ";
+    cin.getline(UserInput.FileName,size);
+    cout << "please input the level";
+    cin >> UserInput.level;
+    
+    inFile.open(UserInput.FileName);
+    myFile.open(UserInput.FileName);
+    
+   
