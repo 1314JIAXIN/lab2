@@ -1,0 +1,66 @@
+#include<iostream>
+#include<fstream> 
+using namespace std;
+
+int main(){
+	struct input{
+	    char FileName[500];
+	    int level;
+    };
+
+    //a string that includes all keywords;
+    string test="switch case else if auto break char const continue default do double enum extern float for goto int long register return short signed sizeof	static struct typedef union unsigned void volatile while";
+    //a string array that includes the words about ifelse
+    string IFAndElse[5]={"else if","else ","else{","if(","if "};
+    ifstream inFile,myFile;
+    
+    cout << "please enter the path of the file: ";
+    cin.getline(UserInput.FileName,size);
+    cout << "please input the level";
+    cin >> UserInput.level;
+    
+    inFile.open(UserInput.FileName);
+    myFile.open(UserInput.FileName);
+    
+    //Level 1 is to find the number of the keywords.
+    if(!inFile.is_open()){
+    	exit(EXIT_FAILURE);
+	}
+	inFile >> word;
+	for(;!inFile.eof()){
+		if(inFile.good()){
+			for(int i=2;i<9;i++){
+				WordTop=test.find(word.substr(0,i));
+				if(WordTop=test.size()&&(word[i])==NULL||word[i]=='!'||word[i]=='('||word[i]==')'||word[i]=='{'||word[i]=='}'||word[i]==';'||word[i]==':')){
+					TotalNum++;
+					identify(WordTop);
+					break;
+				}
+			}
+			inFile >> word;
+		}
+	}
+	cout << "total number: " << TotalNum << endl;
+	
+	//Level 2
+	for(int j=0;j<vec.size();j++){
+		if(vec[j]=='s'&&vec[j+1]=='c'){
+			SwitchNum++;
+			CaseNumArr[NoPointSwitch]=0;
+		}else if(vec[j]=='c'&&vec[j+1]=='s'){
+			CaseNumArr[NoPointSwitch]++;
+			NoPointSwitch++;
+		}else{
+			CaseNumArr[NoPointSwitch]++;
+		}
+	}
+	
+	if(UserInput.level>1){
+		cout << "switch num: " << SwitchNum << endl;
+		cout << "case num: ";
+		for(int z=0;z<NoPointSwitch;z++){
+			cout << ' ' << CaseNumArr[z];
+		}
+	}
+	
+
